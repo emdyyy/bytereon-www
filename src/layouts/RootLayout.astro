@@ -1,0 +1,23 @@
+---
+import "../assets/css/main.css";
+import CookieBanner from "../components/CookieBanner.astro";
+import GTag from "../components/GTag.astro";
+---
+
+<!doctype html>
+<html lang="pl">
+  <head>
+    <GTag />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <slot name="seo" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+  <body>
+    <CookieBanner />
+    <slot />
+  </body>
+</html>

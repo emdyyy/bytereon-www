@@ -1,0 +1,29 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  openGraph: {
+    title: string;
+    image: string;
+    url: string;
+    description: string;
+  };
+}
+
+const { title = "Bytereon", description, canonical, openGraph } = Astro.props;
+---
+
+<title>{title}</title>
+
+<meta name="description" content={description} />
+
+<meta property="og:site_name" content="Bytereon" />
+<meta property="og:locale" content="pl_PL" />
+<meta property="og:url" content={openGraph.url} />
+<meta property="og:type" content="website" />
+<meta property="og:title" content={openGraph.title} />
+<meta property="og:description" content={openGraph.description} />
+<meta property="og:image" content={openGraph.image} />
+
+<link rel="canonical" href={canonical} />

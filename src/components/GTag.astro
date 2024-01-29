@@ -1,0 +1,23 @@
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CHQKZLKG7V"
+></script>
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  if (localStorage.getItem("cookie-consent") === "granted") {
+    gtag("consent", "default", {
+      ad_storage: "granted",
+      analytics_storage: "granted",
+    });
+  } else {
+    gtag("consent", "default", {
+      ad_storage: "denied",
+      analytics_storage: "denied",
+    });
+  }
+
+  gtag("config", "G-CHQKZLKG7V");
+</script>

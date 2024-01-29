@@ -1,0 +1,34 @@
+---
+import { Image } from "astro:assets";
+import Form from "./Form";
+import ContactImage from "../assets/img/contact.svg";
+---
+
+<div
+  class="flex flex-col lg:flex-row gap-12 justify-between items-center md:gap-32"
+>
+  <div class="flex flex-col w-full gap-12">
+    <div class="flex flex-col gap-5">
+      <p class="uppercase text-sm text-primary">Napisz do nas</p>
+      <h2
+        class="font-bold font-poppins uppercase text-2xl md:text-3xl tracking-tight"
+      >
+        Podnieśmy poziom twojego biznesu
+      </h2>
+    </div>
+    <div class="flex flex-col gap-3">
+      <p>
+        Powiedz nam o swojej działalności, dotychczasowych działaniach
+        marketingowych i potrzebach, a my zaproponujemy rozwiązania, które mogą
+        przynieść rezultaty w Twojej firmie.
+      </p>
+      <p>
+        Wyjaśnimy jakie są możliwości, jak działamy i odpowiemy na wszystkie
+        pytania. Jeżeli dojdziesz do wniosku, że mają sens, pomożemy Ci w ich
+        wdrożeniu. Po wypełnieniu formularza skontaktujemy się z Tobą.
+      </p>
+    </div>
+    <Image src={ContactImage} alt="Skontaktuj się z nami" loading="lazy" />
+  </div>
+  <Form client:visible />
+</div>

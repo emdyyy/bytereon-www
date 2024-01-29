@@ -1,0 +1,70 @@
+<script>
+  const cookieBanner = document.getElementById("cookie-banner");
+
+  const consent = localStorage.getItem("cookie-consent");
+  if (!consent) {
+    cookieBanner?.classList.toggle("fixed");
+    cookieBanner?.classList.toggle("hidden");
+  }
+
+  document.getElementById("accept-cookies")?.addEventListener("click", () => {
+    cookieBanner?.classList.toggle("fixed");
+    cookieBanner?.classList.toggle("hidden");
+
+    gtag("consent", "update", {
+      ad_storage: "granted",
+      analytics_storage: "granted",
+    });
+
+    window.localStorage.setItem("cookie-consent", "granted");
+  });
+
+  document.getElementById("deny-cookies")?.addEventListener("click", () => {
+    cookieBanner?.classList.toggle("fixed");
+    cookieBanner?.classList.toggle("hidden");
+
+    gtag("consent", "update", {
+      ad_storage: "denied",
+      analytics_storage: "denied",
+    });
+
+    window.localStorage.setItem("cookie-consent", "denied");
+  });
+</script>
+
+<div
+  id="cookie-banner"
+  class={`flex hidden bottom-0 left-0 z-40 items-center justify-center w-full m-0 rounded-0 md:p-5`}
+>
+  <div
+    class="flex flex-col sm:flex-row w-full justify-between bg-dark p-5 lg:px-16 lg:py-8 items-center gap-5 border-t border-t-[#35393C] md:border-[#35393C] md:border max-w-screen-lg bg-[#121212]"
+  >
+    <div
+      class="flex tracking-tight items-center justify-center w-fit text-body"
+    >
+      <p>
+        Ta strona używa plików cookie do pomiaru i poprawy komfortu użytkowania. <br
+        />
+        <a href="/polityka-prywatnosci" class="underline hover:text-primary">
+          Polityka prywatności
+        </a>
+      </p>
+    </div>
+    <div
+      class="flex shrink items-center justify-center w-full sm:w-fit gap-3 min-w-fit tracking-tight text-white"
+    >
+      <button
+        id="deny-cookies"
+        class="border border-solid border-[#35393C] text-white py-2 px-4 min-w-40 font-medium hover:border-primary"
+      >
+        Tylko niezbędne
+      </button>
+      <button
+        id="accept-cookies"
+        class="bg-secondary py-2 px-8 min-w-40 font-medium border border-solid border-[#35393C] hover:border-primary"
+      >
+        Akceptuj
+      </button>
+    </div>
+  </div>
+</div>

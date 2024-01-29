@@ -1,0 +1,32 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  content: string;
+  author: {
+    logoImg: ImageMetadata;
+    name: string;
+    position: string;
+    url: string;
+    website: string;
+  };
+}
+
+const { content, author } = Astro.props;
+---
+
+<div class="flex flex-col bg-[#121212] md:px-12 md:py-12 gap-12 px-8 py-10">
+  <p>{content}</p>
+  <div class="flex flex-col lg:flex-row gap-12">
+    <div><Image src={author.logoImg} alt={author.name} /></div>
+    <div class="flex flex-col">
+      <p class="font-bold text-primary uppercase font-poppins text-xl mb-3">
+        {author.name}
+      </p>
+      <p>{author.position}</p>
+      <p class="hover:text-primary">
+        <a href={author.url} target="_blank">{author.website}</a>
+      </p>
+    </div>
+  </div>
+</div>
