@@ -26,18 +26,18 @@ import Footer from "./components/Footer.astro";
 import CookieBanner from "./components/CookieBanner.astro";
 ---
 
-<Layout lang="pl">
+<Layout lang="de">
   <SEO
     slot="seo"
-    title="Dbamy o Twoją firmę w internecie - Bytereon"
-    description="Budujemy strony i sklepy internetowe dla małych oraz średnich firm. Tworzymy logo, banery, ulotki, wizytówki i wiele więcej. Skontaktuj się."
-    canonical="https://bytereon.com"
+    title="Wir kümmern uns um Ihr Unternehmen im Internet - Bytereon"
+    description="Wir erstellen Webseiten und Onlineshops für kleine und mittelgrosse Unternehmen. Wir erstellen Logos, Banner, Flyer, Visitenkarten und vieles mehr. Kontaktieren Sie uns."
+    canonical="https://bytereon.com/de"
     openGraph={{
-      title: "Dbamy o Twoją firmę w internecie - Bytereon",
+      title: "Wir kümmern uns um Ihr Unternehmen im Internet - Bytereon",
       description:
-        "Budujemy strony i sklepy internetowe dla małych oraz średnich firm. Tworzymy logo, banery, ulotki, wizytówki i wiele więcej. Skontaktuj się.",
-      url: "https://bytereon.com",
-      image: "https://bytereon.com/opengraph-image.png",
+        "Wir erstellen Webseiten und Onlineshops für kleine und mittelgrosse Unternehmen. Wir erstellen Logos, Banner, Flyer, Visitenkarten und vieles mehr. Kontaktieren Sie uns.",
+      url: "https://bytereon.com/de",
+      image: "https://bytereon.com/opengraph-image-de.png",
     }}
   />
   <CookieBanner slot="cookie-banner" />
@@ -54,13 +54,12 @@ import CookieBanner from "./components/CookieBanner.astro";
           <h1
             class="font-poppins text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-tight max-w-[600px]"
           >
-            Zabłyśnij w oczach twoich klientów
+            Glänze in den Augen Deiner Kunden
           </h1>
           <p class="max-w-[480px]">
-            Specjalizujemy się w tworzeniu nie tylko atrakcyjnych, ale i
-            funkcjonalnych stron internetowych, oraz grafiki użytkowej, które
-            zwiększają wiarygodność Twojej firmy, a także skutecznie wspierają
-            proces pozyskiwania nowych klientów.
+            Wir sind darauf spezialisiert, nicht nur attraktive, sondern auch
+            funktionale Webseiten sowie Grafiken, welche die Glaubwürdigkeit
+            Deines Unternehmens erhöhen und Neukundengewinnung unterstützen.
           </p>
           <div class="flex items-center gap-5">
             <Image
@@ -69,7 +68,7 @@ import CookieBanner from "./components/CookieBanner.astro";
               loading="eager"
               class="h-8 motion-safe:animate-bounce"
             />
-            <p class="text-sm">Zejdź niżej, <br />aby dowiedzieć się więcej</p>
+            <p class="text-sm">Mehr Informationen <br /> findest Du unten</p>
           </div>
         </div>
         <Image
@@ -86,29 +85,29 @@ import CookieBanner from "./components/CookieBanner.astro";
       <div class="max-w-screen-xl mx-auto px-5">
         <div class="flex flex-col gap-5 mb-12">
           <p class="uppercase text-primary text-sm">
-            Razem podniesiemy poziom twojego biznesu
+            Dein Unternehmen auf dem nächsten Level
           </p>
           <h2
             class="font-bold font-poppins uppercase text-2xl md:text-3xl tracking-tight md:w-2/3"
           >
-            Co możemy dla ciebie zrobić?
+            Was können wir für dich tun?
           </h2>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
           <OfferCard
             image={WebsiteImage}
-            title="Strony i sklepy internetowe"
-            description="Tworzymy strony oraz sklepy internetowe jako kluczowe narzędzie wzmacniające zasięg i widoczność Twojej firmy."
+            title="Webseiten und Online-Shops"
+            description="Wir erstellen Webseiten und Online-Shops als wichtiges Instrument zur Stärkung der Reichweite und Sichtbarkeit Ihres Unternehmens."
           />
           <OfferCard
             image={EmailImage}
-            title="Firmowa skrzynka email"
-            description="Oferujemy spersonalizowane emaile z własną domeną nie tylko dla Ciebie, ale także dla pracowników. Dodaj swojej firmie prestiżu oraz podkreśl jej profesjonalizm."
+            title="Email-Postfach für Deine Firma"
+            description="Wir bieten personalisierte Emails mit Deiner eigenen Domain nicht nur für Dich, sondern auch für Deine Mitarbeiter. Verleihe Deinem Unternehmen Prestige und unterstreiche seine Professionalität."
           />
           <OfferCard
             image={BrandingImage}
-            title="logo, wizytówki, banery i wiele więcej"
-            description="Tworzymy unikalny wizerunek Twojej marki, wzmacniając jej rozpoznawalność i budując trwałe relacje z klientami."
+            title="Logos, Visitenkarten, Banner und vieles mehr"
+            description="Wir schaffen ein einzigartiges Image für Ihre Marke, steigern den Wiedererkennungswert Ihrer Marke und bauen dauerhafte Kundenbeziehungen auf."
           />
         </div>
       </div>
@@ -117,33 +116,32 @@ import CookieBanner from "./components/CookieBanner.astro";
       <div class="max-w-screen-xl mx-auto px-5">
         <div class="flex flex-col gap-5 mb-12">
           <p class="uppercase text-primary text-sm">
-            Co zyskujesz dzięki naszej wpółpracy
+            Was profitierst Du von unserer Zusammenarbeit
           </p>
           <h2
             class="font-bold font-poppins uppercase text-2xl md:text-3xl tracking-tight md:w-2/3 max-w-[700px]"
           >
-            Wyróżnij się spośród konkurencji i zdobądź więcej potencjalnych
-            klientów
+            Hebe dich von der Konkurrenz ab und gewinne mehr potenzielle Kunden
           </h2>
         </div>
         <InfoCard
-          title="profesjonalny wizerunek"
-          description="Z nami zyskujesz profesjonalny wizerunek, który zwraca uwagę klientów. Nasze usługi pozwalają Twojej firmie prezentować się solidnie i wiarygodnie, co buduje zaufanie wśród Twoich klientów."
+          title="Professionelle Erscheinung"
+          description="Mit uns gewinnst Du ein professionelles Image, das die Aufmerksamkeit der Kunden auf Dich zieht. Unsere Dienstleistungen ermöglichen es Deinem Unternehmen, sich zuverlässig und glaubwürdig zu präsentieren, was bei Deinen Kunden Vertrauen schafft."
           image={ProfessionalAppearanceImage}
         />
         <InfoCard
-          title="Większa rozpoznawalność"
-          description="Współpraca z nami to klucz do zwiększenia rozpoznawalności Twojej marki. Działamy tak, aby Twoja firma była łatwo rozpoznawalna, co przyciąga uwagę potencjalnych klientów."
+          title="Höhere Sichtbarkeit"
+          description="Die Zusammenarbeit mit uns ist der Schlüssel zur Steigerung Deiner Markenbekanntheit. Wir arbeiten daran, Dein Unternehmen leicht erkennbar zu machen, was die Aufmerksamkeit potenzieller Kunden auf Dich zieht."
           image={StandOutImage}
         />
         <InfoCard
-          title="Więcej Potencjalnych klientów"
-          description="Dzięki profesjonalnemu wizerunkowi i większej rozpoznawalności,  zyskujesz przewagę w pozyskiwaniu nowych klientów. Solidna prezentacja przyciąga uwagę, sprawiając, że firma staje się atrakcyjniejsza dla potencjalnych klientów."
+          title="Mehr potenzielle Kunden"
+          description="Ein professionelles Image und ein höherer Wiedererkennungswert verschafft Dir einen Vorteil bei der Gewinnung neuer Kunden. Eine solide Präsentation erregt Aufmerksamkeit und macht Dein Unternehmen für potenzielle Kunden attraktiver."
           image={MoreClientsImage}
         />
         <InfoCard
-          title="Więcej czasu dla twojego biznesu"
-          description="Dzięki naszemu wieloletniemu doświadczeniu i efektywnym procesom, gwarantujemy najwyższą jakość dostosowaną do Twoich potrzeb. Nie musisz samodzielnie poświęcać wielu godzin na naukę. Skorzystaj z naszej sprawdzonej ekspertyzy!"
+          title="Mehr Zeit für Dein Geschäft"
+          description="Mit unserer langjährigen Erfahrung und unseren effizienten Prozessen garantieren wir Dir höchste Qualität, die auf Deine Bedürfnisse zugeschnitten ist. Du musst nicht stundenlang im Selbststudium arbeiten. Profitiere von unserem bewährten Know-how!"
           image={SaveMoneyImage}
         />
       </div>
@@ -155,7 +153,7 @@ import CookieBanner from "./components/CookieBanner.astro";
         <div class="w-full">
           <Image
             src={ProjectImage}
-            alt="Unikalne rozwiązania oraz ultra szybka prędkość ładowania"
+            alt="Einzigartige Lösungen und ultraschnelle Ladegeschwindigkeiten"
             loading="lazy"
             class="mx-auto w-64 md:w-72 lg:w-fit"
           />
@@ -164,13 +162,14 @@ import CookieBanner from "./components/CookieBanner.astro";
           <h2
             class="font-bold font-poppins uppercase text-2xl md:text-3xl tracking-tight"
           >
-            Unikalne rozwiązania oraz ultra szybka prędkość ładowania
+            Einzigartige Lösungen und ultraschnelle Ladegeschwindigkeiten
           </h2>
           <p>
-            Każdą stronę tworzymy od podstaw, dopasowując ją do unikalnych cech
-            Twojej firmy. Nie stosujemy gotowych szablonów z internetu. Ponadto,
-            gwarantujemy ultra szybką prędkość ładowania dzięki topowym
-            serwerom. Twoja strona ładuję się w mgnieniu oka, bez kompromisów.
+            Wir erstellen jede Webseite von Grund auf neu und passen sie an die
+            einzigartigen Merkmale Deines Unternehmens. Wir verwenden keine
+            vorgefertigten Vorlagen aus dem Internet. Darüber hinaus garantieren
+            wir ultraschnelle Ladegeschwindigkeiten dank Top Servern. Ihre
+            Webseite lädt im Handumdrehen, ohne Kompromisse.
           </p>
         </div>
       </div>
@@ -183,21 +182,21 @@ import CookieBanner from "./components/CookieBanner.astro";
           <h2
             class="font-bold font-poppins uppercase text-2xl md:text-3xl tracking-tight"
           >
-            Pełne wsparcie techniczne
+            Vollständige technische Unterstützung
           </h2>
           <p>
-            Zapewniamy pełne wsparcie techniczne, zajmując się obsługą strony od
-            A do Z. Odpowiadamy za każdy aspekt, abyś Ty nie musiał tracić czasu
-            na czytanie instrukcji technicznych. Dbałość o klienta to nasza
-            priorytetowa zasada. Z nami otrzymasz gotowy rezultat, a my
-            wytłumaczymy Ci wszystko co niezbędne, abyś mógł podejmować
-            przemyślane decyzje biznesowe.
+            Wir bieten umfassende technische Unterstützung und betreuen die
+            Webseite von A bis Z. Wir sind für jeden Aspekt verantwortlich, so
+            dass Du keine Zeit mit Lesen von technischen Handbüchern
+            verschwendest. Kundenbetreuung ist unser vorrangiges Prinzip. Bei
+            uns erhaltest Du ein fertiges Ergebnis und wir erklären Dir alles,
+            damit Du fundierte Geschäftsentscheidungen treffen kannst.
           </p>
         </div>
         <div class="w-full">
           <Image
             src={ServersImage}
-            alt="Pełne wsparcie techniczne"
+            alt="Vollständige technische Unterstützung"
             loading="lazy"
             class="mx-auto w-64 md:w-72 lg:w-fit"
           />
@@ -211,7 +210,7 @@ import CookieBanner from "./components/CookieBanner.astro";
         <div class="w-full">
           <Image
             src={CalculateImage}
-            alt="Koszty dopasowane do każdego projektu"
+            alt="Auf jedes Projekt zugeschnittene Kosten"
             loading="lazy"
             class="mx-auto w-64 md:w-72 lg:w-fit"
           />
@@ -220,19 +219,20 @@ import CookieBanner from "./components/CookieBanner.astro";
           <h2
             class="font-bold font-poppins uppercase text-2xl md:text-3xl tracking-tight"
           >
-            Koszty dopasowane do każdego projektu
+            Auf jedes Projekt zugeschnittene Kosten
           </h2>
           <div class="flex flex-col gap-5">
             <p>
-              Z uwagi na unikalność każdego projektu, cenę dostosowujemy
-              indywidualnie. Jednak dla lepszego zrozumienia zakresu kosztów,
-              najniższe stawki zaczynają się już od 1 000 zł, a przy
-              rozbudowanej współpracy mogą sięgać dużo wyżej.
+              Aufgrund der Einzigartigkeit jedes Projekts passen wir den Preis
+              individuell an. Zum besseren Verständnis der Kostenspanne, Die
+              niedrigsten Preise beginnen bei 1'000 CHF und können bei längerer
+              Zusammenarbeit auch höher liegen.
             </p>
             <p>
-              Po zakończeniu projektu, klient ma możliwość utrzymania strony na
-              naszych ultra-szybkich serwerach za niską opłatą miesięczną lub w
-              dowolnie przez niego wybranym miejscu.
+              Sobald das Projekt abgeschlossen ist, hat jeder Kunde die
+              Möglichkeit, die Webseite auf unseren ultraschnellen Servern gegen
+              eine geringe monatliche Gebühr oder an einem Standort seiner Wahl
+              zu betreiben.
             </p>
           </div>
         </div>
@@ -241,60 +241,65 @@ import CookieBanner from "./components/CookieBanner.astro";
     <section class="py-16 lg:py-24">
       <div class="max-w-screen-xl mx-auto px-5">
         <div class="flex flex-col gap-5 mb-12">
-          <p class="uppercase text-primary text-sm">Jak rozpocząć współpracę</p>
+          <p class="uppercase text-primary text-sm">
+            Wie unsere Zusammenarbeit beginnt
+          </p>
           <h2
             class="font-bold font-poppins uppercase text-2xl md:text-3xl tracking-tight md:w-2/3 max-w-[700px]"
           >
-            Tylko kilka prostych kroków, aby cieszyć się z naszych korzyści
+            Nur ein paar einfache Schritte, um von unseren Vorteilen zu
+            profitieren
           </h2>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-16 sm:gap-8 lg:gap-24">
           <BuyingProcessCard
             index={1}
-            title="Wstępna konsultacja"
-            description="Porozmawiamy o Twoich celach i wstępnie przeanalizujemy zakres współpracy."
+            title="Erstberatung"
+            description="Wir werden über Ihre Ziele sprechen und grob den Umfang der Zusammenarbeit ermitteln."
           />
           <BuyingProcessCard
             index={2}
-            title="Koncepcja działania"
-            description="Na tym etapie dokładnie weryfikujemy wcześniej omówione cele i zbieramy niezbędne informacje."
+            title="Konzeption der Massnahmen"
+            description="In dieser Phase überprüfen wir sorgfältig die zuvor besprochenen Ziele und sammeln alle notwendigen Informationen."
           />
           <BuyingProcessCard
             index={3}
-            title="Rozpoczęcie współpracy"
-            description="Mając komplet materiałów, rozpoczynamy pracę."
+            title="Beginn der Zusammenarbeit"
+            description="Sobald die Materialien bereitstehen, beginnen wir mit der Arbeit."
           />
         </div>
       </div>
     </section>
     <section class="bg-lighter py-16 lg:py-24">
       <div class="flex flex-col gap-5 mb-12 max-w-screen-xl mx-auto px-5">
-        <p class="uppercase text-primary text-sm">Poznaj nasze opinie</p>
+        <p class="uppercase text-primary text-sm">
+          Rückmeldungen unserer Kunden
+        </p>
         <h2
           class="font-bold font-poppins uppercase text-2xl md:text-3xl tracking-tight md:w-2/3"
         >
-          Co mówią o nas nasi klienci?
+          Was sagen unsere Kunden?
         </h2>
       </div>
       <div
         class="grid grid-cols-1 sm:grid-cols-2 gap-1 max-w-screen-xl mx-auto px-5"
       >
         <FeedbackCard
-          content="“Działania Bytereon to prawdziwa rewolucja dla naszej firmy. Ich kompleksowe usługi, obejmujące tworzenie strony, hosting, skrzynki pocztowe i projektowanie grafiki dla naszego salonu, sprawiły, że wyróżniamy się spośród konkurencji. Dzięki ich zaangażowaniu osiągnęliśmy nasze cele marketingowe, zwiększając jednocześnie naszą widoczność w internecie.”"
+          content="“Die Arbeit von Bytereon war eine echte Revolution für unser Unternehmen. Ihre umfassenden Dienstleistungen, einschließlich Webseitenentwicklung, Hosting, Mailboxen und Grafikdesign für unseren Betrieb, haben uns von der Konkurrenz deutlich hervorgehoben. Dank ihres Engagements haben wir unsere Marketingziele erreicht und gleichzeitig unsere Online-Präsenz erhöht.”"
           author={{
             logoImg: BarberBrothersLogo,
             name: "Kacper Grzybek",
-            position: "Współwłaściciel",
+            position: "Mitinhaber",
             url: "https://barberbrothers.pl",
             website: "barberbrothers.pl",
           }}
         />
         <FeedbackCard
-          content="“Dzięki Bytereon, moja niewielka firma zbudowała solidny wizerunek online. Ich profesjonalizm w tworzeniu strony internetowej, hostingu oraz dostarczaniu spersonalizowanej skrzynki pocztowej sprawił, że moja obecność w sieci stała się wyjątkowo skuteczna. Osiągnęłam zamierzone cele biznesowe, a wsparcie od Bytereon okazało się kluczowe dla tego sukcesu.”"
+          content="“Dank Bytereon hat mein kleines Unternehmen eine solide Online-Präsenz aufgebaut. Ihre Professionalität bei der Erstellung einer Webseite, dem Hosting und der Bereitstellung einer personalisierten Mailbox hat meine Online-Präsenz äusserst effektiv gemacht. Ich habe meine Geschäftsziele erreicht, und die Unterstützung von Bytereon war entscheidend für diesen Erfolg.”"
           author={{
             logoImg: JKMLogo,
             name: "Justyna Malinowska",
-            position: "Włascicielka",
+            position: "Mitinhaberin",
             url: "https://uroczystosc-marzen.pl",
             website: "uroczystosc-marzen.pl",
           }}

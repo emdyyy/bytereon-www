@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import ArrowIcon from "../assets/img/arrow.svg";
+import ArrowIcon from "@assets/img/arrow.svg";
 
 interface Props {
   image: ImageMetadata;
@@ -26,7 +26,7 @@ const { image, title, description } = Astro.props;
   </div>
   <a href="#kontakt" class="uppercase hover:text-primary mt-8"
     ><div class="flex items-center gap-3">
-      <p>Napisz do nas</p><Image src={ArrowIcon} alt="" class="h-3" />
+      <p>Kontaktiere uns</p><Image src={ArrowIcon} alt="" class="h-3" />
     </div></a
   >
 </div>

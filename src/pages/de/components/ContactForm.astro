@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+import Form from "./Form";
+import ContactImage from "@assets/img/contact.svg";
+---
+
+<div
+  class="flex flex-col lg:flex-row gap-12 justify-between items-center md:gap-32"
+>
+  <div class="flex flex-col w-full gap-12">
+    <div class="flex flex-col gap-5">
+      <p class="uppercase text-sm text-primary">Kontaktiere uns</p>
+      <h2
+        class="font-bold font-poppins uppercase text-2xl md:text-3xl tracking-tight"
+      >
+        Steigern wir das Potenzial Deines Unternehmens
+      </h2>
+    </div>
+    <div class="flex flex-col gap-3">
+      <p>
+        Erzähle uns von Deinem Unternehmen und Zielen, damit wir
+        massgeschneiderte Lösungen vorschlagen können, die Ergebnisse für Dich
+        bringen.
+      </p>
+      <p>
+        Wir erklären Dir, welche Möglichkeiten es gibt, wie wir arbeiten und
+        beantworten alle Fragen. Wenn Du zu dem Schluss kommst, dass sie
+        sinnvoll sind, helfen wir Dir bei der Umsetzung. Sobald Du das Formular
+        ausgefüllt und abgeschickt hast, werden wir Dich kontaktieren.
+      </p>
+    </div>
+    <Image src={ContactImage} alt="Kontaktiere uns" loading="lazy" />
+  </div>
+  <Form client:visible />
+</div>

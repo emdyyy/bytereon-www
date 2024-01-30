@@ -7,20 +7,22 @@ export const prerender = false;
 const ContactFormSchema = yup.object().shape({
   email: yup
     .string()
-    .email("Email jest nieprawidłowy")
-    .required("To pole jest wymagane")
-    .typeError("Wymagane jest podanie adresu skrzynki pocztowej"),
+    .email("Email is incorrect")
+    .required("This field is required")
+    .typeError("A mailbox address is required"),
   phoneNumber: yup
     .string()
-    .matches(/^\d{9}$/, "Podaj numer w formacie XXX XXX XXX")
-    .min(9)
-    .required("To pole jest wymagane")
-    .typeError("Podaj numer w formacie XXX XXX XXX"),
+    .matches(
+      /^\+(?:\d ?){6,14}\d$/,
+      "Enter the phone number in the format +XX XXX XXX XXX."
+    )
+    .required("This field is required")
+    .typeError("Enter the phone number in the format +XX XXX XXX XXX."),
   message: yup
     .string()
     .max(150)
-    .required("To pole jest wymagane")
-    .typeError("Wymagane jest podanie krótkiej wiadomości"),
+    .required("This field is required")
+    .typeError("A short message is required"),
 });
 
 const transport = nodemailer.createTransport({
@@ -42,17 +44,17 @@ export const POST: APIRoute = async ({ request }) => {
     await ContactFormSchema.validate(data);
 
     const mail = {
-      from: '"dopasowujemy.pl" <automat@dopasowujemy.pl>',
+      from: '"BYTEREON Website" <automat@dopasowujemy.pl>',
       to: "biuro@bytereon.com",
-      subject: "Nowe zapytanie z bytereon.com",
+      subject: "New inquiry from bytereon.com",
       text:
         "Email: " +
         data.email +
-        "\nNumer telefonu: " +
+        "\n\nPhone number: " +
         data.phoneNumber +
-        "\nWiadomość: " +
+        "\n\nMessage: " +
         data.message +
-        "\n\nWiadomość została wygenerowana automatycznie. Prosimy na nią nie odpowiadać.",
+        "\n\nThis message was generated automatically. Please do not respond to it.",
     };
 
     transport.sendMail(mail, (error) => {
@@ -61,12 +63,12 @@ export const POST: APIRoute = async ({ request }) => {
       }
     });
 
-    return new Response("Email nadany pomyślnie", {
+    return new Response("Email sent successfully", {
       status: 200,
     });
   } catch (error) {
     console.log(error);
-    return new Response("Wystąpił błąd", {
+    return new Response("An error occurred", {
       status: 500,
     });
   }

@@ -1,11 +1,16 @@
 ---
-import "../assets/css/main.css";
-import CookieBanner from "../components/CookieBanner.astro";
-import GTag from "../components/GTag.astro";
+import "@assets/css/main.css";
+import GTag from "@components/GTag.astro";
+
+interface Props {
+  lang: "de" | "pl";
+}
+
+const { lang } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="pl">
+<html lang={lang}>
   <head>
     <GTag />
     <meta charset="UTF-8" />
@@ -17,7 +22,7 @@ import GTag from "../components/GTag.astro";
     <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body>
-    <CookieBanner />
+    <slot name="cookie-banner" />
     <slot />
   </body>
 </html>

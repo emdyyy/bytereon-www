@@ -1,0 +1,15 @@
+---
+import { Image } from "astro:assets";
+import Logo from "@assets/img/bytereon-logo-full.svg";
+---
+
+<nav class="w-full py-12 flex justify-between items-center font-poppins">
+  <div class="flex gap-12 items-center justify-between w-full">
+    <a href="/" class="w-44" aria-label="Strona główna">
+      <Image src={Logo} alt="" loading="eager" />
+    </a>
+    <a href="/#kontakt" class="hover:text-primary hidden sm:block"
+      >Wyślij zapytanie</a
+    >
+  </div>
+</nav>

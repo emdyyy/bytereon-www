@@ -16,20 +16,22 @@ export default function ContactForm() {
   const FormSchema = yup.object().shape({
     email: yup
       .string()
-      .email("Email jest nieprawidłowy")
-      .required("To pole jest wymagane")
-      .typeError("Wymagane jest podanie adresu skrzynki pocztowej"),
+      .email("Email ist falsch")
+      .required("Dieses Feld ist erforderlich")
+      .typeError("Eine Email Adresse ist erforderlich"),
     phoneNumber: yup
       .string()
-      .matches(/^\d{9}$/, "Podaj numer w formacie XXX XXX XXX")
-      .min(9)
-      .required("To pole jest wymagane")
-      .typeError("Podaj numer w formacie XXX XXX XXX"),
+      .matches(
+        /^\+(?:\d ?){6,14}\d$/,
+        "Geben Sie die Rufnummer im Format +XX XXX XXX XXX ein."
+      )
+      .required("Dieses Feld ist erforderlich")
+      .typeError("Geben Sie die Rufnummer im Format +XX XXX XXX XXX ein."),
     message: yup
       .string()
       .max(150)
-      .required("To pole jest wymagane")
-      .typeError("Wymagane jest podanie krótkiej wiadomości"),
+      .required("Dieses Feld ist erforderlich")
+      .typeError("Mindestens eine kurze Nachricht ist erforderlich"),
   });
 
   const onSubmit = async (
@@ -82,14 +84,14 @@ export default function ContactForm() {
       {({ errors, touched, isSubmitting }) => (
         <Form className="w-full bg-lighter flex gap-5 flex-col px-5 py-8 sm:px-8 sm:py-12 md:p-12 max-w-[530px]">
           <div className="flex flex-col gap-3">
-            <label htmlFor="email">Adres email*</label>
+            <label htmlFor="email">Email Adresse*</label>
             <Field
               id="email"
               name="email"
               type="email"
               autoComplete="email"
               required
-              placeholder="Twój adres email"
+              placeholder="Deine Email Adresse"
               className={`border bg-lighter border-solid p-4 rounded-none outline-none disabled:bg-slate-300 disabled:text-slate-500
               ${
                 errors.email && touched.email
@@ -103,16 +105,16 @@ export default function ContactForm() {
             )}
           </div>
           <div className="flex flex-col gap-3">
-            <label htmlFor="phoneNumber">Numer telefonu*</label>
+            <label htmlFor="phoneNumber">Telefonnummer*</label>
             <Field
               id="phoneNumber"
               name="phoneNumber"
               type="tel"
               autoComplete="tel-national"
               required
-              minLength={9}
-              maxLength={9}
-              placeholder="Twój numer telefonu"
+              minLength={12}
+              maxLength={12}
+              placeholder="Deine Telefonnummer"
               className={`border bg-lighter border-solid p-4 rounded-none outline-none disabled:bg-slate-300 disabled:text-slate-500
               ${
                 errors.phoneNumber && touched.phoneNumber
@@ -126,14 +128,14 @@ export default function ContactForm() {
             <p className="text-sm text-alert">{errors.phoneNumber}</p>
           )}
           <div className="flex flex-col gap-3">
-            <label htmlFor="message">Temat rozmowy*</label>
+            <label htmlFor="message">Gesprächsthema*</label>
             <Field
               as="textarea"
               id="message"
               name="message"
               required
               autoComplete="off"
-              placeholder="O czym chcesz porozmawiać?"
+              placeholder="Worüber möchtest Du sprechen?"
               rows={3}
               maxLength={150}
               className={`border bg-lighter border-solid p-4 rounded-none outline-none resize-y disabled:bg-slate-300 disabled:text-slate-500
@@ -149,33 +151,34 @@ export default function ContactForm() {
             )}
           </div>
           <p className="text-sm">
-            Administratorem danych wprowadzonych do formularza jest Bytereon
-            Mateusz Dettlaff. Dane osobowe będą przetwarzane w celu nawiązania
-            kontaktu i udzielenia odpowiedzi na pytania. Więcej informacji o
-            przysługujących prawach i zasadach przetwarzania danych, dostępne
-            jest w polityce prywatności.
+            Der Verwalter der in das Formular eingegebenen Daten ist Bytereon
+            Mateusz Dettlaff. Die personenbezogenen Daten werden zum Zweck der
+            Kontaktaufnahme und zur Beantwortung von Fragen verarbeitet. Weitere
+            Informationen über Ihre Rechte und die Regeln der Datenverarbeitung
+            finden Sie in den Datenschutzbestimmungen.
           </p>
           <button
             type="submit"
             className="bg-primary text-black py-4 px-6 block text-center disabled:bg-slate-300 disabled:text-slate-500"
             disabled={isSubmitting}
           >
-            Wyślij
+            Senden
           </button>
           {formStatus === "success" && (
             <p className="text-lime-500">
-              Dziękujemy za Twoje zapytanie. Wkrótce odezwiemy się do Ciebie.
+              Vielen Dank für Ihre Anfrage. Wir werden uns in Kürze bei Dir
+              melden.
             </p>
           )}
           {formStatus === "error" && (
             <p className="text-alert">
-              Wystąpił błąd podczas wysyłania zapytania. Prosimy o kontakt z
-              nami bezpośrednio pod adresem{" "}
+              Beim Senden Deiner Anfrage ist ein Fehler aufgetreten. Bitte
+              kontaktiere uns direkt unter{" "}
               <a
-                href="mailto:biuro@dopasowujemy.pl"
+                href="mailto:contact@bytereon.com"
                 className="text-primary hover:text-secondary"
               >
-                biuro@dopasowujemy.pl
+                contact@bytereon.com
               </a>
             </p>
           )}
